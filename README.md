@@ -9,17 +9,14 @@ Requirements
 Platform
 --------
 
-* Debian, Ubuntu
-* CentOS, Red Hat, Fedora
-* Amazon Linux
+* Ubuntu
 
 Cookbooks
 ---------
 
 * apt (leverages apt_repository LWRP)
-* yum (leverages yum_repository LWRP)
 
-The `apt_repository` and `yum_repository` LWRPs are used from these cookbooks to create the proper repository entries so the php-fpm package downloaded and installed.
+The `apt_repository` LWRPs is used from these cookbooks to create the proper repository entries so the php-fpm package downloaded and installed.
 
 Description
 ==========

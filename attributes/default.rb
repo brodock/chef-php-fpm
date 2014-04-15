@@ -1,12 +1,3 @@
-if node.platform_family == "rhel"
-  user = "apache"
-  group = "apache"
-  conf_dir = "/etc/php.d"
-  pool_conf_dir = "/etc/php-fpm.d"
-  conf_file = "/etc/php-fpm.conf"
-  error_log = "/var/log/php-fpm/error.log"
-  pid = "/var/run/php-fpm/php-fpm.pid"
-else
   user = "www-data"
   group = "www-data"
   conf_dir = "/etc/php5/fpm/conf.d"
@@ -18,7 +9,6 @@ else
   end
   error_log = "/var/log/php5-fpm.log"
   pid ="/var/run/php5-fpm.pid"
-end
 
 default['php-fpm']['user'] = user
 default['php-fpm']['group'] = group
@@ -31,6 +21,8 @@ default['php-fpm']['log_level'] = "notice"
 default['php-fpm']['emergency_restart_threshold'] = 0
 default['php-fpm']['emergency_restart_interval'] = 0
 default['php-fpm']['process_control_timeout'] = 0
+default['php-fpm']['process_max'] = 0
+default['php-fpm']['daemonize'] = 'yes'
 default['php-fpm']['pools'] = [
   {
     :name => "www"
